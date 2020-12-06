@@ -41,3 +41,7 @@ vignettes/*.pdf
 # ignore all files in a directories
 others/
 sources/
+
+# others files
+.Rbuildignore
+.Rproj
