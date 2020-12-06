@@ -1,5 +1,5 @@
 # landusepl
-Display, convert and export CORINE Land Cover Map to WAsP roughness file for a selected county in Poland.
+Display, convert and export CORINE Land Cover - CLC 2018 map to WAsP roughness file for a selected county in Poland.
 
 ### CORINE Land Cover - CLC 2018 for Poland
 Description of the project is available on the web page <https://clc.gios.gov.pl/index.php/clc-2018/o-projekcie> where data can be requested.
