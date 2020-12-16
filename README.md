@@ -12,7 +12,7 @@ Description of the project is available on the web page <https://clc.gios.gov.pl
 
 **Change and processing CORINE Land Cover - CLC 2018 data set**
 
-*The package landusepl modifies and changes the structure of the obtained map files.*
+*The package landusepl uses the divided into provinces the main CORINE Land Cover - CLC 2018 map file. Due to it in some areas data were lost.*
 
 ### Installation
 
@@ -23,7 +23,7 @@ remotes::install_github("prcwiek/landusepl")
 ```
 
 ### Remarks
-The package landusepl uses quite big data files, hence it can work slow. 
+The package landusepl uses quite big map files, hence it can work slow. 
 
 
 

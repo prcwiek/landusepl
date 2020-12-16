@@ -1,0 +1,29 @@
+Package: landusepl
+Title: CORINE landuse map to WAsP roughness
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Pawel",
+             family = "Cwiek",
+             role = c("aut", "cre"),
+             email = "prc.altodato@gmail.com")
+Description: Display, convert and export CORINE land use map to WAsP roughness file for a selected county in Poland.
+License: GPL (>= 3)
+BugReports: https://github.com/prcwiek/landusepl/issues
+Depends:
+  R (>= 3.6.0),
+  utils,
+  stats
+Imports:
+  broom,
+  dplyr,
+  magrittr,
+  raster,
+  rgeos,
+  sf,
+  sp,
+  stringr,
+  tmap
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
