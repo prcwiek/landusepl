@@ -8,15 +8,15 @@ Description of the project is available on the web page <https://clc.gios.gov.pl
 
 **Acording to the terms of use, please find the below obligatory statement:**
 
-*„Projekt Corine Land Cover 2018 w Polsce został zrealizowany przez Instytut Geodezji i Kartografii i sfinansowany ze środków Unii Europejskiej. Wyniki porojektu zostały pozyskane ze strony internetowej Głównego Inspektoratu Ochrony Środowiska <clc.gios.gov.pl>.*
+*„Projekt Corine Land Cover 2018 w Polsce został zrealizowany przez Instytut Geodezji i Kartografii i sfinansowany ze środków Unii Europejskiej. Wyniki porojektu zostały pozyskane ze strony internetowej Głównego Inspektoratu Ochrony Środowiska <https://clc.gios.gov.pl>.*
 
 **Change and processing CORINE Land Cover - CLC 2018 data set**
 
-*The package landusepl uses the divided into provinces the main CORINE Land Cover - CLC 2018 map file. Due to it in some areas data were lost.*
+*The package landusepl uses the divided into provinces the main CORINE Land Cover - CLC 2018 map file. Due to it in some areas of Poland data were lost.*
 
 ### Installation
 
-Dev version
+Dev version 0.0.0.9000
 
 ``` r
 remotes::install_github("prcwiek/landusepl")
