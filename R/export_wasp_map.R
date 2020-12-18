@@ -49,6 +49,7 @@ export_wasp_map <- function(fname = "", code_je = "0414", wgs_zone = 0, buffer =
     corine <- d10
   } else if(voivod_prefix == "12") {
     corine <- d12
+    message("Missing data in several areas of this voivodeship!")
   } else if(voivod_prefix == "14") {
     corine <- d14
   } else if(voivod_prefix == "16") {
@@ -57,16 +58,21 @@ export_wasp_map <- function(fname = "", code_je = "0414", wgs_zone = 0, buffer =
     corine <- d18
   } else if(voivod_prefix == "20") {
     corine <- d20
+    message("Missing data in several areas of this voivodeship!")
   } else if(voivod_prefix == "22") {
     corine <- d22
+    message("Missing data in several areas of this voivodeship!")
   } else if(voivod_prefix == "24") {
     corine <- d24
+    message("Missing data in several areas of this voivodeship!")
   } else if(voivod_prefix == "26") {
     corine <- d26
+    message("Missing data in several areas of this voivodeship!")
   } else if(voivod_prefix == "28") {
     corine <- d28
   } else if(voivod_prefix == "30") {
     corine <- d30
+    message("Missing data in several areas of this voivodeship!")
   } else if(voivod_prefix == "32") {
     corine <- 32
   }
@@ -158,4 +164,5 @@ export_wasp_map <- function(fname = "", code_je = "0414", wgs_zone = 0, buffer =
     }
   }
   close(fcon)
+  message("Done!")
 }
