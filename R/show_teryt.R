@@ -9,6 +9,7 @@
 #'
 #' @return a data frame with requested information.
 #'
+#' @importFrom magrittr %>%
 #' @export
 #'
 #' @examples
@@ -33,5 +34,5 @@ show_teryt <- function(teryt = "", voivodeship = "", code_je = "", county = "") 
       dout <- dplyr::filter(dout, County == county)
     }
   }
-  dout
+  dout %>% dplyr::as_tibble() %>% print(n = Inf)
 }
