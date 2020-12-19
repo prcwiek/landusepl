@@ -23,7 +23,7 @@ Description of the project is available on the web page <https://clc.gios.gov.pl
 
 ### Installation
 
-Dev version 0.0.0.9001
+Dev version 0.0.0.9003
 
 ``` r
 remotes::install_github("prcwiek/landusepl")

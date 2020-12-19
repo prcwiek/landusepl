@@ -2,7 +2,7 @@
 % Please edit documentation in R/show_teryt.R
 \name{show_teryt}
 \alias{show_teryt}
-\title{Show TERYT data frame.}
+\title{Show TERYT data.}
 \usage{
 show_teryt(teryt = "", voivodeship = "", code_je = "", county = "")
 }
@@ -16,10 +16,10 @@ show_teryt(teryt = "", voivodeship = "", code_je = "", county = "")
 \item{county}{character vector; name of Polish county}
 }
 \value{
-a data frame with requested information.
+a tibble with requested information
 }
 \description{
-Display TERYT data frame
+Display TERYT code, voivodship, code_je of county and county name.
 }
 \examples{
 show_teryt()
