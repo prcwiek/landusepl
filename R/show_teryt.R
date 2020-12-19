@@ -1,15 +1,16 @@
-#' Show TERYT data frame.
+#' Show TERYT data.
 #'
-#' Display TERYT data frame
+#' Display TERYT code, voivodship, code_je of county and county name.
 #'
 #' @param teryt character vector; two digits TERYT number, code of Polish voivodeship
 #' @param voivodeship character vector; Polish voivodeship name
 #' @param code_je charatcer vector; code of Polish county
 #' @param county character vector; name of Polish county
 #'
-#' @return a data frame with requested information.
+#' @return a tibble with requested information
 #'
 #' @importFrom magrittr %>%
+#'
 #' @export
 #'
 #' @examples
