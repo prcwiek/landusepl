@@ -29,8 +29,7 @@ Dev version 0.0.0.9001
 remotes::install_github("prcwiek/landusepl")
 ```
 
-### Remarks
-The package landusepl uses quite big map files, hence it can work slow. 
+
 
 
 
