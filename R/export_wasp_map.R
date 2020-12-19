@@ -10,7 +10,7 @@
 #' @return show a leaflet map with Corine roughness areas.
 #'
 #' @importFrom magrittr %>%
-
+#'
 #' @export
 #'
 #' @examples
