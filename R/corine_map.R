@@ -62,7 +62,7 @@ corine_map <- function(code_je = "0414") {
   } else if(voivod_prefix == "30") {
     corine <- sf::st_as_sf(d30)
   } else if(voivod_prefix == "32") {
-    corine <- sf::st_as_sf(32)
+    corine <- sf::st_as_sf(d32)
   }
   corine <- sf::st_transform(corine, crs = 4326)
 
