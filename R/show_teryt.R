@@ -35,5 +35,5 @@ show_teryt <- function(teryt = "", voivodeship = "", code_je = "", county = "") 
       dout <- dplyr::filter(dout, County == county)
     }
   }
-  dout %>% dplyr::as_tibble() %>% print(n = Inf)
+  dout
 }
