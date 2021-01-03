@@ -1,4 +1,7 @@
 ---
+  layout: post
+  leafletmap: true
+  always_allow_html: yes
   output: github_document
 ---
   landusepl
@@ -28,7 +31,7 @@ Description of the project is available on the web page <https://clc.gios.gov.pl
 
 ### Change and processing of CORINE Land Cover - CLC 2018 data set
 
-*The package landusepl uses the main CORINE Land Cover - CLC 2018 map file divided into voivodeships. Due to this conversion it in the below voivodeships of Poland data were lost:*
+The package landusepl uses the main CORINE Land Cover - CLC 2018 map file divided into voivodeships. Due to this conversion it in the below voivodeships of Poland data were lost:
 
 * TERYT code 12, Lesser Poland, województwo małopolskie
 * TERYT code 20, Podlaskie, województwo podlaskie
@@ -39,9 +42,67 @@ Description of the project is available on the web page <https://clc.gios.gov.pl
 
 ### Installation
 
-Get the development version 0.0.0.9003 from github:
+Get the development version 0.0.0.9100 from github:
 
 ```{r eval=FALSE}
 # install.packages("devtools")
 devtools::install_github("prcwiek/landusepl")
 ```
+
+### Use
+
+```{r}
+library(landusepl)
+```
+
+For example, let's take a look at Zachodniopomorskie voivodeship (district) in Poland. 
+First we have to find a county for which we want to generate maps. We have to do it with TERYT codes and found code_je for a county we are 
+interested in. 
+
+TERYT is a code of voivodeship. The complete list of voivodeships in Poland is presented below.
+
+```{r}
+library(dplyr)
+show_teryt() %>% select(TERYT, Voivodeship) %>% distinct(TERYT, Voivodeship) %>% arrange(Voivodeship)
+```
+
+
+Let's find all counties in Zachodniopomorskie voivodeship (district) which has TERYT code 32. The code_je is a code of a county consists of TERYT + 2 digits identifier.
+```{r}
+show_teryt(teryt = "32")
+```
+
+Let's take a look at the borders of Gryfinski County, which has a code_je 3206
+
+```{r eval = FALSE}
+county_map(code_je = "3206")
+```
+
+And its land cover according to CORINE Land Cover - CLC 2018 for Poland. 
+
+```{r eval = FALSE}
+corine_map(code_je = "3206")
+```
+
+In the above map for each area there are two values displayed, the CODE_18 and roughness length assigned according to the below table.
+
+```{r}
+show_clc()
+```
+
+It is possible to export the above table as csv file, modify and upload it back.
+
+```{r eval = FALSE}
+# save with the assignation table to a file, .csv is added fname automatically
+save_clc(fname = "assignation_table")
+
+# load a file with the assignation table
+load_clc(fname = "assignation_table.csv")
+```
+
+The export to a WAsP map file (https://www.wasp.dk/Support/FAQ#maps__roughnessandorography)
+```{r eval = FALSE}
+export_wasp_map(fname = "gryfinski.map", code_je = "3206", wgs_zone = 33, buffer = -1)
+```
+It is necessary to provide the correct UTM WGS34 zone, for Poland 33 or 34. 
+The buffer has to be negative and will be used to shrink all areas. The roughness between areas will be equal to 0.03. The default value is -1 m. 
