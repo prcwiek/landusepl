@@ -4,7 +4,8 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 Display, convert and export CORINE Land Cover - CLC 2018 map to WAsP
-roughness file for a selected county in Poland.
+(Wind Atlas Analysis and Application Program) roughness file for a
+selected county in Poland.
 
 ### CORINE Land Cover - CLC 2018 for Poland
 
