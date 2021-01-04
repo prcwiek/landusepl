@@ -88,7 +88,7 @@ which has TERYT code 32. The code\_je is a code of a county consists of
 TERYT + 2 digits identifier.
 
 ``` r
-show_teryt(teryt = "32")
+show_teryt(teryt = "32") %>% print(n = Inf)
 #> # A tibble: 21 x 4
 #>    TERYT Voivodeship        Code_je County      
 #>    <chr> <chr>              <chr>   <chr>       
@@ -102,7 +102,17 @@ show_teryt(teryt = "32")
 #>  8 32    zachodniopomorskie 3208    kołobrzeski 
 #>  9 32    zachodniopomorskie 3261    Koszalin    
 #> 10 32    zachodniopomorskie 3209    koszaliński 
-#> # … with 11 more rows
+#> 11 32    zachodniopomorskie 3218    łobeski     
+#> 12 32    zachodniopomorskie 3210    myśliborski 
+#> 13 32    zachodniopomorskie 3211    policki     
+#> 14 32    zachodniopomorskie 3212    pyrzycki    
+#> 15 32    zachodniopomorskie 3213    sławieński  
+#> 16 32    zachodniopomorskie 3214    stargardzki 
+#> 17 32    zachodniopomorskie 3216    świdwiński  
+#> 18 32    zachodniopomorskie 3263    Świnoujście 
+#> 19 32    zachodniopomorskie 3262    Szczecin    
+#> 20 32    zachodniopomorskie 3215    szczecinecki
+#> 21 32    zachodniopomorskie 3217    wałecki
 ```
 
 Let’s take a look at the borders of Gryfinski County, which has a

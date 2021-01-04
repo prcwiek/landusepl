@@ -69,7 +69,7 @@ show_teryt() %>% select(TERYT, Voivodeship) %>% distinct(TERYT, Voivodeship) %>%
 
 Let's find all counties in Zachodniopomorskie voivodeship (district) which has TERYT code 32. The code_je is a code of a county consists of TERYT + 2 digits identifier.
 ```{r}
-show_teryt(teryt = "32")
+show_teryt(teryt = "32") %>% print(n = Inf)
 ```
 
 Let's take a look at the borders of Gryfinski County, which has a code_je 3206
