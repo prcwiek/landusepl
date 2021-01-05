@@ -10,7 +10,7 @@ Description: Display, convert and export CORINE land use map to WAsP roughness f
 License: GPL (>= 3)
 BugReports: https://github.com/prcwiek/landusepl/issues
 Depends:
-  R (>= 3.6.0),
+  R (>= 4.0.0),
   utils,
   stats
 Imports:
