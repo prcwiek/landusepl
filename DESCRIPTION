@@ -17,6 +17,7 @@ Imports:
   broom,
   dplyr,
   magrittr,
+  maptools,
   raster,
   rgdal,
   rgeos,
