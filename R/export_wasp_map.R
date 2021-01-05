@@ -109,13 +109,19 @@ export_wasp_map <- function(fname = "", code_je = "0414", wgs_zone = 0, buffer =
 
   # Saving file -------------------------------------------------------------
   message("Saving file...")
+  # select separator
+  if (R.Version()$os == "linux-gnu") {
+    lsep <- "\r\n"
+  } else {
+    lsep <- "\n"
+  }
   # open file
   fcon = file(fname, "w")
   # write header
-  writeLines(paste0("+", fname, ", 3: 34: 10: 0, UTM (north)-WGS84 Zone: 34 | UTM Z34 WGS-8 | WME v.11.3.2.360"), sep = "\r\n", fcon)
-  writeLines("  0.000000   0.000000   0.000000   0.000000", sep = "\r\n", fcon)
-  writeLines("  1.000000   0.000000   1.000000   0.000000",  sep = "\r\n", fcon)
-  writeLines("  1.000000   0.000000", sep = "\r\n", fcon)
+  writeLines(paste0("+", fname, ", 3: 34: 10: 0, UTM (north)-WGS84 Zone: 34 | UTM Z34 WGS-8 | WME v.11.3.2.360"), sep = lsep, fcon)
+  writeLines("  0.000000   0.000000   0.000000   0.000000", sep = lsep, fcon)
+  writeLines("  1.000000   0.000000   1.000000   0.000000",  sep = lsep, fcon)
+  writeLines("  1.000000   0.000000", sep = lsep, fcon)
 
   # get numbers of polygons
   items <- unique(df$group)
@@ -136,17 +142,17 @@ export_wasp_map <- function(fname = "", code_je = "0414", wgs_zone = 0, buffer =
 
       # write header of a new line
       writeLines(paste0("     0.0300","      ", format(lr, nsmall = 4), "      ", nrow(dw)),
-                 sep = "\r\n", fcon)
+                 sep = lsep, fcon)
 
       # number of full lines
       nfl <- nrow(dw) %/% 3
 
       j <- 1
       while(j < nfl * 3 ){
-        writeLines(paste0("   ", format(dw$long[j], nsmall = 1),"   ", format(dw$lat[j], nsmall = 1),
+        writeLines(paste("   ", format(dw$long[j], nsmall = 1),"   ", format(dw$lat[j], nsmall = 1),
                           "    ", format(dw$long[j+1], nsmall = 1),"   ", format(dw$lat[j+1], nsmall = 1),
                           "    ", format(dw$long[j+2], nsmall = 1),"   ", format(dw$lat[j+2], nsmall = 1)),
-                   sep = "\r\n", fcon)
+                   sep = lsep, fcon)
 
         j <- j + 3
       }
@@ -155,10 +161,10 @@ export_wasp_map <- function(fname = "", code_je = "0414", wgs_zone = 0, buffer =
       if(k - nfl * 3 == 2){
         writeLines(paste0("   ", format(dw$long[k-1], nsmall = 1),"   ", format(dw$lat[k-1], nsmall = 1),
                           "    ", format(dw$long[k], nsmall = 1),"   ", format(dw$lat[k], nsmall = 1)),
-                   sep = "\r\n", fcon)
+                   sep = lsep, fcon)
       } else if(k - nfl * 3 == 1){
         writeLines(paste0("   ", format(dw$long[k], nsmall = 1),"   ", format(dw$lat[k], nsmall = 1)),
-                   sep = "\r\n", fcon)
+                   sep = lsep, fcon)
 
       }
     }
