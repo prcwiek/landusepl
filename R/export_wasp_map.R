@@ -4,7 +4,7 @@
 #'
 #' @param fname character vector; file name
 #' @param code_je character vector; code of Polish county
-#' @param wsg_zone numeric vector; 33 or 34 UTM WGS84 zone
+#' @param utm_zone numeric vector; 33 or 34 UTM WGS84 zone
 #' @param buffer numeric vector; negative shape buffer value
 #'
 #' @return show a leaflet map with Corine roughness areas.
@@ -16,7 +16,7 @@
 #' @examples
 #' export_wasp_map()
 #'
-export_wasp_map <- function(fname = "", code_je = "0414", wgs_zone = 0, buffer = -1) {
+export_wasp_map <- function(fname = "", code_je = "0414", utm_zone = 0, buffer = -1) {
   if(fname  == "") {
     stop("ERROR: File name missing!", call. = FALSE)
   }
@@ -27,7 +27,7 @@ export_wasp_map <- function(fname = "", code_je = "0414", wgs_zone = 0, buffer =
   if(is.na(as.numeric(code_je))) {
     stop("ERROR: Invalid input format! Argument code_je has to have 4 digits chars.", call. = FALSE)
   }
-  if(wgs_zone != 33 & wgs_zone != 34) {
+  if(utm_zone != 33 & utm_zone != 34) {
     stop("ERROR: Wrong UTM WGS84 zone! For Poland select 33 or 34", call. = FALSE)
   }
   if(buffer >= 0) {
@@ -87,7 +87,7 @@ export_wasp_map <- function(fname = "", code_je = "0414", wgs_zone = 0, buffer =
   corine_crop <- raster::crop(corine, powiat_shape)
   corine_crop <- suppressWarnings(sp::spTransform(corine_crop,
                              raster::crs(paste0("+proj=utm +zone=",
-                                                wgs_zone,
+                                                utm_zone,
                                                 "+ellps=WGS84 +datum=WGS84 +units=m +no_defs"))))
 
 
@@ -118,7 +118,8 @@ export_wasp_map <- function(fname = "", code_je = "0414", wgs_zone = 0, buffer =
   # open file
   fcon = file(fname, "w")
   # write header
-  writeLines(paste0("+", fname, ", 3: 34: 10: 0, UTM (north)-WGS84 Zone: 34 | UTM Z34 WGS-8 | WME v.11.3.2.360"), sep = lsep, fcon)
+  writeLines(paste0("+", fname, ", 3: 34: 10: 0, UTM (north)-WGS84 Zone:",
+                    utm_zone, " | UTM Z34 WGS-8 | WME v.11.3.2.360"), sep = lsep, fcon)
   writeLines("  0.000000   0.000000   0.000000   0.000000", sep = lsep, fcon)
   writeLines("  1.000000   0.000000   1.000000   0.000000",  sep = lsep, fcon)
   writeLines("  1.000000   0.000000", sep = lsep, fcon)

@@ -102,7 +102,7 @@ load_clc(fname = "assignation_table.csv")
 
 The export to a WAsP map file (https://www.wasp.dk/Support/FAQ#maps__roughnessandorography)
 ```{r eval = FALSE}
-export_wasp_map(fname = "gryfinski.map", code_je = "3206", wgs_zone = 33, buffer = -1)
+export_wasp_map(fname = "gryfinski.map", code_je = "3206", utm_zone = 33, buffer = -1)
 ```
-It is necessary to provide the correct UTM WGS34 zone, for Poland 33 or 34. 
+It is necessary to provide the correct WGS84 UTMzone, for Poland 33 or 34. 
 The buffer has to be negative and will be used to shrink all areas. The roughness between areas will be equal to 0.03. The default value is -1 m. 
