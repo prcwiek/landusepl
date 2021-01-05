@@ -38,7 +38,7 @@ voivodeships of Poland data were lost:
 
 ### Installation
 
-Get the development version 0.0.0.9100 from github:
+Get the development version 0.0.0.9200 from github:
 
 ``` r
 # install.packages("devtools")

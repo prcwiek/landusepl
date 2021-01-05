@@ -1,6 +1,6 @@
 Package: landusepl
 Title: CORINE landuse map to WAsP roughness
-Version: 0.0.0.9100
+Version: 0.0.0.9200
 Authors@R: 
     person(given = "Pawel",
              family = "Cwiek",
