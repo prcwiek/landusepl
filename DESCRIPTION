@@ -18,6 +18,7 @@ Imports:
   dplyr,
   magrittr,
   raster,
+  rgdal,
   rgeos,
   sf,
   sp,
