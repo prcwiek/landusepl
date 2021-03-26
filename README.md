@@ -2,6 +2,13 @@
 # landusepl
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- badges: start -->
+
+[![Project Status: Concept – Minimal or no implementation has been done
+yet, or the repository is only intended to be a limited example, demo,
+or
+proof-of-concept.](https://www.repostatus.org/badges/latest/concept.svg)](https://www.repostatus.org/#concept)
+<!-- badges: end -->
 
 Display, convert and export CORINE Land Cover - CLC 2018 map to WAsP
 (Wind Atlas Analysis and Application Program) roughness file for a
