@@ -17,7 +17,7 @@ selected county in Poland.
 ### CORINE Land Cover - CLC 2018 for Poland
 
 Description of the project is available on the web page
-<https://clc.gios.gov.pl/index.php/clc-2018/o-projekcie> where data can
+<https://clc.gios.gov.pl/index.php/clc-2018/o-projekcie-2018> where data can
 be requested.
 
 ### Obligatory information due to the use of CORINE Land Cover - CLC 2018
